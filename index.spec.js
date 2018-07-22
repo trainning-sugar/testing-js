@@ -6,5 +6,11 @@ describe('The add function  test', () =>{
     const actual = add(5,6);
     const expectation = 11;
     assert.equal(actual, expectation);
+  });
+  it('Should return an error if arguments are not passed in', ()=>{
+    assert.throws(()=>{
+      add();
+    })
   })
+
 })
