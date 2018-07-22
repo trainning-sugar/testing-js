@@ -1,0 +1,23 @@
+{
+  "name": "testing-js",
+  "version": "1.0.0",
+  "description": "Es un pedazo de código que compara el `resultado` vs `esperado`\r El resultado de la operación es igual a lo esperado.\r Una asersión verifica si el resultado es igual a lo esperado(expectation)",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha index.spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trainning-sugar/testing-js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trainning-sugar/testing-js/issues"
+  },
+  "homepage": "https://github.com/trainning-sugar/testing-js#readme",
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  }
+}
