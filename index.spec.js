@@ -1,8 +1,10 @@
 const assert = require('assert');
 const {add} = require('./index');
 
-const result = add(5,6);
-
-if(result !== 11){
-  throw new Error('The add function did not return 11 when adding 5 plus 6');
-}
+describe('The add function  test', () =>{
+  it('Should return 11 for arguments 5 and 6 ', ()=>{
+    const actual = add(5,6);
+    const expectation = 11;
+    assert.equal(actual, expectation);
+  })
+})
