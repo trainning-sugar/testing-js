@@ -1,3 +1,4 @@
+const assert = require('assert');
 const {add} = require('./index');
 
 const result = add(5,6);
