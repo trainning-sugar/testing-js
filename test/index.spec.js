@@ -7,7 +7,7 @@ const {
 describe('The package index.js', () => {
 
   describe('The parse function', () => {
-    it(`Should return an object { by:'kati-frantz', popular:'true', category:'nodejs'} off all query params when '?by=kati-frantz&popular=true&category=nodejs' is pass to it`, () => {
+    it(`Should return an object of all query params when a query string is passed to it`, () => {
       const actual = parse('?by=kati-frantz&popular=true&category=nodejs');
       const expected = {
         by: 'kati-frantz',
@@ -23,7 +23,7 @@ describe('The package index.js', () => {
     })
   });
   describe('The stringify function', () => {
-    it(`Should return a string '?by=kati-frantz&popular=true&category=nodejs' when the object { by:'kati-frantz', popular:'true', category:'nodejs'} is pass to it `, () => {
+    it(`Should return query string with a query params when a object is pass it `, () => {
       const actual = stringify({
         by: 'kati-frantz',
         popular: 'true',
