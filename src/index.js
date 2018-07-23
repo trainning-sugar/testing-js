@@ -33,6 +33,6 @@ const stringify = queryObject => {
 //console.log(stringify({ by: 'kati-frantz', popular:'true', category:'nodejs'}));
 
 module.exports = {
-  stringify,
-  parse
+  parse,
+  stringify
 }
