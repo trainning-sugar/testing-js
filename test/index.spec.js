@@ -1,41 +1,30 @@
 const assert = require('assert');
-const {
-  parse,
-  stringify
-} = require('../src/index');
+const {parse, stringify} = require('../src/index');
 
-describe('The package index.js', () => {
-
-  describe('The parse function', () => {
-    it(`Should return an object of all query params when a query string is passed to it`, () => {
-      const actual = parse('?by=kati-frantz&popular=true&category=nodejs');
-      const expected = {
+describe('index package', () => {
+  describe('Function parse', () => {
+    it('Should return a objetc when a query string is passed to it', () => {
+      assert.deepEqual(parse('by=kati-frantz&popular=true&category=nodejs'), {
         by: 'kati-frantz',
         popular: 'true',
         category: 'nodejs'
-      };
-      assert.deepEqual(actual, expected);
-    });
-    it(`Should return {number:'3'} when the query '?number=3' is pass to it`, () => {
-      assert.deepEqual(parse('?number=3'), {
-        number: '3'
       });
+    });
+    it(`Should return an objetc : {number : 3} when '?number = 3' is passed into it` , () => {
+      assert.deepEqual(parse('number=3'), {number:3});
     })
   });
-  describe('The stringify function', () => {
-    it(`Should return query string with a query params when a object is pass it `, () => {
-      const actual = stringify({
-        by: 'kati-frantz',
-        popular: 'true',
-        category: 'nodejs'
-      });
-      const expected = '?by=kati-frantz&popular=true&category=nodejs';
-      assert.deepEqual(actual, expected);
+  describe('Function stringify', () => {
+    it('Should eliminates all undefined and null values' , () => {
+      assert.equal(stringify({
+          by : 'kati-frantz',
+          popular : undefined,
+          unaswered : null
+        }
+      ), '?by=kati-frantz')
     });
-    it(`Should return '?number=3' when object {number:3} is pass it`, () => {
-      assert.deepEqual(stringify({
-        number: '3'
-      }), '?number=3');
-    })
+    it('Should return a query string when a object is passed to it', () => {
+      assert.deepEqual(stringify({number:3}) , '?number=3')
+    });
   })
-});
+})

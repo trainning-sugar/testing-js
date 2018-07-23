@@ -1,18 +1,22 @@
 // takes in ?by=kati-frantz&popular=true&category=nodejs and returns { by:'kati-frantz', popular:'true', category:'nodejs'}
 const parse = queryString => {
-	if (queryString[0] === '?') {
-		queryString = queryString.substring(1);
-	}
-	let queries = queryString.split("&");
 	const params = {};
-	queries.forEach(query => {
-		const queryObject = query.split('=')
-		params[queryObject[0]] = queryObject[1]
-	})
+	if(queryString[0] === '?'){
+	 queryString = queryString.substring(1)
+	 queryString.split('&').forEach(query => {
+		 const queryObject = query.split('=');
+		 params[queryObject[0]] = queryObject[1];
+	 })
+	} else {
+		queryString.split('&').forEach(query => {
+		const queryObject = query.split('=');
+		params[queryObject[0]] = queryObject[1];
+	});
+	}
 	return params
 }
 
-//console.log(parse('?by=kati-frantz&popular=true&category=nodejs'));
+console.log(parse('?by=kati-frantz&popular=true&category=nodejs'));
 
 //Takes a obj and verify doesn't have properties with out values and delete that properties
 const removeEmpty = obj => {
