@@ -1,0 +1,26 @@
+{
+  "name": "testing-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha test/**/**.spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trainning-sugar/testing-js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trainning-sugar/testing-js/issues"
+  },
+  "homepage": "https://github.com/trainning-sugar/testing-js#readme",
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  }
+}
